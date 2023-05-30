@@ -1,0 +1,47 @@
+.mainContainer {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.inputContainer {
+  position: relative;
+  width: 350px;
+}
+
+.inputBox {
+  width: 300px;
+  height: 20px;
+  padding: 5px 44px 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.inputBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-color: #ccc;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.inputBox:focus {
+  outline: none;
+  box-shadow: 0 0 5px gray;
+}
