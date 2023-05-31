@@ -26,8 +26,8 @@ const Header = (): JSX.Element => {
           />
         </div>
         <div className={styles.feature}>
-          {features.map((feature) => (
-            <p>{feature.name}</p>
+          {features.map((feature, ind) => (
+            <p key={ind}>{feature.name}</p>
           ))}
         </div>
       </div>
