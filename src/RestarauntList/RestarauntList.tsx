@@ -3,8 +3,10 @@ import styles from "./RestarauntList.module.css";
 import { RESTARAUNT_LIST } from "../constants";
 import RestarauntCard from "./RestarauntCard";
 import Loader from "../Components/Loader";
+import { Link } from "react-router-dom";
 
 export interface RestarauntDetails {
+  id: string;
   name: string;
   address: string;
   rating: string;
@@ -32,6 +34,7 @@ function RestarauntList(): JSX.Element {
       data?.cards.forEach((card: any) => {
         const restarauntData = card?.data;
         restarauntArray.push({
+          id: restarauntData.data.id,
           name: restarauntData.data.name,
           address: restarauntData.data.address,
           rating: restarauntData.data.avgRating,
@@ -79,7 +82,9 @@ function RestarauntList(): JSX.Element {
           {initialRestarauntList.current ? (
             restarauntList && restarauntList?.length > 0 ? (
               restarauntList.map((restaurant, ind) => (
-                <RestarauntCard key={ind} {...restaurant} />
+                <Link to={`/restaraunt/${restaurant.id}`}>
+                  <RestarauntCard key={ind} {...restaurant} />
+                </Link>
               ))
             ) : (
               <h2>No restaurants found</h2>

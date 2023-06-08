@@ -1,18 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 interface featureType {
   name: string;
+  path: string;
 }
 const Header = (): JSX.Element => {
   const features: featureType[] = [
     {
       name: "Home",
+      path: "/",
     },
     {
       name: "Contact",
+      path: "/contact",
     },
     {
       name: "About us",
+      path: "about",
     },
   ];
   return (
@@ -27,7 +32,9 @@ const Header = (): JSX.Element => {
         </div>
         <div className={styles.feature}>
           {features.map((feature, ind) => (
-            <p key={ind}>{feature.name}</p>
+            <Link to={feature.path}>
+              <p key={ind}>{feature.name}</p>
+            </Link>
           ))}
         </div>
       </div>
